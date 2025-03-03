@@ -1,0 +1,12 @@
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.DataSource.deps.json
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.DataSource.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.DataSource.pdb
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.GeneratedMSBuildEditorConfig.editorconfig
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.AssemblyInfoInputs.cache
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.AssemblyInfo.cs
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.csproj.CoreCompileInputs.cache
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.sourcelink.json
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/refint/Cars.DataSource.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.pdb
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/ref/Cars.DataSource.dll

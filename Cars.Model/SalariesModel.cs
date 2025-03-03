@@ -6,6 +6,7 @@ public class SalariesModel
     public string Nom { get; set; }
     public string Prenom { get; set; }
     public string Email { get; set; }
+    public int Entrepriseid { get; set; }
     public EntreprisesModel? Entreprise { get; set; }
     public List<AttributionVehiculeModel>? AttributionVehicules { get; set; }
 }
