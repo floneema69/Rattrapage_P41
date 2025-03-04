@@ -1,5 +1,6 @@
 
 using Cars.DataContext.EntityTypeConfiguration;
+using Cars.DataContext.Seed;
 using Cars.Model;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,5 +24,7 @@ namespace Cars.DataContext;
             modelBuilder.ApplyConfiguration(new AttributionVehiculeEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new SalariesEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new EntrepriseEntityTypeConfiguration());
+            
+            EntreprisesSeed.Seed(modelBuilder);
         }
     }
