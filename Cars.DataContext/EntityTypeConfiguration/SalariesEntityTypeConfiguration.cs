@@ -9,10 +9,16 @@ namespace Cars.DataContext.EntityTypeConfiguration
         public void Configure(EntityTypeBuilder<SalariesModel> builder)
         {
             builder.HasKey(s => s.Salarieid);
-            
+
             builder.HasOne(s => s.Entreprise)
                 .WithMany(e => e.Salaries)
-                .HasForeignKey(s => s.Entrepriseid);
+                .HasForeignKey(s => s.Entrepriseid)
+                .OnDelete(DeleteBehavior.NoAction); 
+
+            builder.HasOne(s => s.Vehicule)
+                .WithOne()
+                .HasForeignKey<SalariesModel>(s => s.Vehiculeid)
+                .OnDelete(DeleteBehavior.NoAction); 
         }
     }
 }

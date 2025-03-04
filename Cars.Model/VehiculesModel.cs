@@ -11,5 +11,4 @@ public class VehiculesModel
     public string statut { get; set; }
     
     public EntreprisesModel? Entreprise { get; set; }
-    public List<AttributionVehiculeModel>? AttributionVehicules { get; set; }
 }
