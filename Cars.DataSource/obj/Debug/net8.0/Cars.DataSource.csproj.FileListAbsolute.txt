@@ -10,3 +10,9 @@
 /home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/refint/Cars.DataSource.dll
 /home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.pdb
 /home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/ref/Cars.DataSource.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.DataContext.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.Model.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.DataContext.pdb
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/bin/Debug/net8.0/Cars.Model.pdb
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.csproj.AssemblyReference.cache
+/home/cosmo/Development/NET/Rattrapage/Cars.DataSource/obj/Debug/net8.0/Cars.DataSource.csproj.CopyComplete

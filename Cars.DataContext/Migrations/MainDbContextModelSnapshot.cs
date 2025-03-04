@@ -136,6 +136,28 @@ namespace Cars.DataContext.Migrations
                     b.HasIndex("EntrepriseID");
 
                     b.ToTable("Vehicules");
+
+                    b.HasData(
+                        new
+                        {
+                            Vehiculeid = 1,
+                            EntrepriseID = 1,
+                            Immatriculation = "ABC123",
+                            Marque = "Toyota",
+                            Modele = "Corolla",
+                            Nom = "Vehicle1",
+                            statut = "Active"
+                        },
+                        new
+                        {
+                            Vehiculeid = 2,
+                            EntrepriseID = 2,
+                            Immatriculation = "DEF456",
+                            Marque = "Honda",
+                            Modele = "Civic",
+                            Nom = "Vehicle2",
+                            statut = "Inactive"
+                        });
                 });
 
             modelBuilder.Entity("Cars.Model.AttributionVehiculeModel", b =>

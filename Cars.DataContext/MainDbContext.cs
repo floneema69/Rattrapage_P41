@@ -26,5 +26,6 @@ namespace Cars.DataContext;
             modelBuilder.ApplyConfiguration(new EntrepriseEntityTypeConfiguration());
             
             EntreprisesSeed.Seed(modelBuilder);
+            VehicleSeed.Seed(modelBuilder);
         }
     }

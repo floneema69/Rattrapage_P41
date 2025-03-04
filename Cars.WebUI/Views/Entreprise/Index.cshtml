@@ -1,0 +1,37 @@
+@model List<Cars.WebUI.ViewModel.EntrepriseViewModel>
+
+<h2>Entreprises avec Contrat Actif</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Contrat Actif</th>
+        <th>Vehicules</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var entreprise in Model)
+    {
+        <tr>
+            <td>@entreprise.Nom</td>
+            <td>@entreprise.ContratActif</td>
+            <td>
+                @if (entreprise.Vehicules != null && entreprise.Vehicules.Any())
+                {
+                    <ul>
+                        @foreach (var vehicule in entreprise.Vehicules)
+                        {
+                            <li>@vehicule.Nom</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <span>Aucun véhicule</span>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
