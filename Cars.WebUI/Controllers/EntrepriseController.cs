@@ -3,6 +3,10 @@ using Cars.DataSource.Interfaces;
 using Cars.WebUI.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
+using Cars.Model;
+using Cars.WebUI.ViewModel;
+using Cars.WebUI.ViewModel.EntrepriseViewModels;
+
 
 namespace Cars.WebUI.Controllers
 {
@@ -37,5 +41,30 @@ namespace Cars.WebUI.Controllers
 
             return View(entrepriseViewModels);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View(new CreateEntrepriseViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Create(CreateEntrepriseViewModel viewModel)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
+            var entreprise = new EntreprisesModel
+            {
+                Nom = viewModel.Nom,
+                ContratActif = viewModel.ContratActif
+            };
+
+            _entrepriseDataSource.CreateEntreprise(entreprise);
+            return RedirectToAction("Index");
+        }
+
     }
 }

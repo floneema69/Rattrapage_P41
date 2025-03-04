@@ -1,0 +1,22 @@
+@model Cars.WebUI.ViewModel.EntrepriseViewModels.CreateEntrepriseViewModel
+
+<h2>Create Entreprise</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Nom"></label>
+        <input asp-for="Nom" name="Nom" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Contrat Actif</label>
+        <div class="form-check">
+            <input asp-for="ContratActif" name="ContratActif" class="form-check-input" type="radio" value="true" id="contratActifYes" />
+            <label class="form-check-label" for="contratActifYes">Oui</label>
+        </div>
+        <div class="form-check">
+            <input asp-for="ContratActif" name="ContratActif" class="form-check-input" type="radio" value="false" id="contratActifNo" />
+            <label class="form-check-label" for="contratActifNo">Non</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

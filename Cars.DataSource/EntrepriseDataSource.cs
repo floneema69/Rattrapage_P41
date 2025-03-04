@@ -21,5 +21,10 @@ namespace Cars.DataSource
                 .Include(e => e.Vehicules)
                 .ToList();
         }
+        public void CreateEntreprise(EntreprisesModel entreprise)
+        {
+            _context.Entreprises.Add(entreprise);
+            _context.SaveChanges();
+        }
     }
 }
