@@ -8,7 +8,9 @@ public class VehiculesModel
     public string Marque { get; set; }
     public string Modele { get; set; }
     public string Immatriculation { get; set; }
-    public string statut { get; set; }
+    public bool statut { get; set; }
     
     public EntreprisesModel? Entreprise { get; set; }
+    
+    public SalariesModel? Salarie { get; set; }
 }

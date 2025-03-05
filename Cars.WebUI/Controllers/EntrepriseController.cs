@@ -6,6 +6,7 @@ using System.Linq;
 using Cars.Model;
 using Cars.WebUI.ViewModel;
 using Cars.WebUI.ViewModel.EntrepriseViewModels;
+using Cars.WebUI.ViewModel.VehiculesViewModels;
 
 
 namespace Cars.WebUI.Controllers
@@ -35,7 +36,9 @@ namespace Cars.WebUI.Controllers
                     Marque = v.Marque,
                     Modele = v.Modele,
                     Immatriculation = v.Immatriculation,
-                    Statut = v.statut
+                    Statut = v.statut,
+                    SalarierPrenom = v.Salarie?.Prenom,
+                    SalarierNom = v.Salarie?.Nom
                 }).ToList()
             }).ToList();
 

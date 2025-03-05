@@ -1,4 +1,4 @@
-@model List<Cars.WebUI.ViewModel.EntrepriseViewModel>
+@model List<Cars.WebUI.ViewModel.EntrepriseViewModels.EntrepriseViewModel>
 
 <h2>Entreprises avec Contrat Actif</h2>
 
@@ -8,6 +8,7 @@
         <th>Nom</th>
         <th>Contrat Actif</th>
         <th>Vehicules</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -22,7 +23,20 @@
                     <ul>
                         @foreach (var vehicule in entreprise.Vehicules)
                         {
-                            <li>@vehicule.Nom</li>
+                            <li>
+                                @vehicule.Nom -
+                                @if (!string.IsNullOrEmpty(vehicule.SalarieNomComplet))
+                                {
+                                    @vehicule.SalarieNomComplet
+                                }
+                                else
+                                {
+                                    @if (vehicule.Statut)
+                                    {
+                                        <a asp-controller="Salarie" asp-action="Assign" asp-route-idEntreprise="@entreprise.EntrepriseId" asp-route-idVehicule="@vehicule.VehiculeId" class="btn btn-primary">Associer un salarié</a>
+                                    }                                }
+                                <a asp-controller="Vehicule" asp-action="UpdateStatus" asp-route-id="@vehicule.VehiculeId" class="btn btn-secondary">Modifier le statut</a>
+                            </li>
                         }
                     </ul>
                 }
@@ -31,7 +45,11 @@
                     <span>Aucun véhicule</span>
                 }
             </td>
+            <td>
+                <a asp-controller="Vehicule" asp-action="Create" asp-route-idEntreprise="@entreprise.EntrepriseId" class="btn btn-primary">Ajouter un véhicule</a>
+            </td>
         </tr>
     }
     </tbody>
+    <partial name="_ValidationScriptsPartial"/>
 </table>

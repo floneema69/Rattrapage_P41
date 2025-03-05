@@ -1,4 +1,6 @@
-namespace Cars.WebUI.ViewModel
+using Cars.WebUI.ViewModel.VehiculesViewModels;
+
+namespace Cars.WebUI.ViewModel.EntrepriseViewModels
 {
     public class EntrepriseViewModel
     {

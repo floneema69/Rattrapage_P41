@@ -1,0 +1,18 @@
+@model Cars.WebUI.ViewModel.AssignSalarieViewModel
+
+<h2>Assigner un salarié</h2>
+<form asp-action="Assign" method="post">
+    <div class="form-group">
+        <label asp-for="IdEntreprise"></label>
+        <input asp-for="IdEntreprise" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="IdVehicule"></label>
+        <input asp-for="IdVehicule" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="SelectedSalarieId"></label>
+        <select asp-for="SelectedSalarieId" class="form-control" asp-items="Model.Salaries"></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>

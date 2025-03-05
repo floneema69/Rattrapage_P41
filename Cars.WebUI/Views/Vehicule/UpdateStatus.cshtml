@@ -1,0 +1,18 @@
+@model Cars.WebUI.ViewModel.VehiculesViewModels.UpdateVehiculeStatusViewModel
+
+<h2>Mettre à jour le statut du véhicule</h2>
+
+<form asp-action="UpdateStatus" method="post">
+    <div class="form-group">
+        <label asp-for="VehiculeId"></label>
+        <input asp-for="VehiculeId" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <select asp-for="Status" class="form-control">
+            <option value="true">Disponible</option>
+            <option value="false">Indisponible</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Status</button>
+</form>

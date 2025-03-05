@@ -1,4 +1,4 @@
-namespace Cars.WebUI.ViewModel
+namespace Cars.WebUI.ViewModel.VehiculesViewModels
 {
     public class VehiculesViewModel
     {
@@ -8,6 +8,10 @@ namespace Cars.WebUI.ViewModel
         public string Marque { get; set; }
         public string Modele { get; set; }
         public string Immatriculation { get; set; }
-        public string Statut { get; set; }
+        public bool Statut { get; set; }
+        public string? SalarierPrenom { get; set; }
+        public string? SalarierNom { get; set; }
+        public string SalarieNomComplet => $"{SalarierPrenom} {SalarierNom}".Trim();
     }
+
 }

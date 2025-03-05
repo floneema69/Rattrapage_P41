@@ -1,4 +1,3 @@
-
 using Cars.DataContext;
 using Cars.DataSource;
 using Cars.DataSource.Interfaces;
@@ -16,8 +15,9 @@ public static class ServicesExtensionMethods
             options.UseSqlServer(connectionString);
         });
 
-        
         services.AddScoped<IEntrepriseDataSource, EntrepriseDataSource>();
+        services.AddScoped<IVehiculesDataSource, VehiculesDataSources>();
+        services.AddScoped<ISalarierDataSource, SalarierDataSources>();
 
         return services;
     }

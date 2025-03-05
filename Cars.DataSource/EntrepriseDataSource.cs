@@ -19,6 +19,7 @@ namespace Cars.DataSource
             return _context.Entreprises
                 .Where(e => e.ContratActif)
                 .Include(e => e.Vehicules)
+                .ThenInclude(v => v.Salarie)
                 .ToList();
         }
         public void CreateEntreprise(EntreprisesModel entreprise)

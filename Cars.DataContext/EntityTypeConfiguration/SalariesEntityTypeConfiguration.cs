@@ -16,9 +16,9 @@ namespace Cars.DataContext.EntityTypeConfiguration
                 .OnDelete(DeleteBehavior.NoAction); 
 
             builder.HasOne(s => s.Vehicule)
-                .WithOne()
+                .WithOne(v => v.Salarie)
                 .HasForeignKey<SalariesModel>(s => s.Vehiculeid)
-                .OnDelete(DeleteBehavior.NoAction); 
+                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }
