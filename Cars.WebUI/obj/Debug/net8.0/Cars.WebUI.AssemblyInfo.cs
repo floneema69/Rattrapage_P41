@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cars.WebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ba80f3b4def7c6b523aab7d3d7326ed0baa3706")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0dbf705d7015fdd83624a469d7a8294511bb522")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cars.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cars.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

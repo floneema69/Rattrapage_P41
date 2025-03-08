@@ -13,7 +13,13 @@ namespace Cars.DataSource
         {
             _context = context;
         }
-
+        public List<EntreprisesModel> ListerEntreprises()
+        {
+            return _context.Entreprises
+                .Include(e => e.Vehicules)
+                .ThenInclude(v => v.Salarie)
+                .ToList();
+        }
         public List<EntreprisesModel> ListerEntreprisesAvecContrat()
         {
             return _context.Entreprises

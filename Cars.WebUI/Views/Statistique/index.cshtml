@@ -1,0 +1,63 @@
+@model List<Cars.WebUI.ViewModel.EntrepriseViewModels.EntrepriseViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistiques des Entreprises</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+<h1>Statistiques des Entreprises</h1>
+
+@{
+    int totalEntreprises = Model.Count;
+    int entreprisesAvecContrat = Model.Count(e => e.ContratActif);
+    double pourcentageContrat = totalEntreprises > 0 ? (entreprisesAvecContrat * 100.0 / totalEntreprises) : 0;
+
+    int totalVehicules = Model.Sum(e => e.Vehicules.Count);
+    int vehiculesAttribues = Model.Sum(e => e.Vehicules.Count(v => !string.IsNullOrEmpty(v.SalarierPrenom) && !string.IsNullOrEmpty(v.SalarierNom)));
+    double pourcentageVehiculesAttribues = totalVehicules > 0 ? (vehiculesAttribues * 100.0 / totalVehicules) : 0;
+}
+
+<p>Pourcentage d'entreprises avec un contrat actif : @pourcentageContrat.ToString("0.00")%</p>
+<p>Pourcentage de véhicules attribués : @pourcentageVehiculesAttribues.ToString("0.00")%</p>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nom de l'entreprise</th>
+        <th>Contrat Actif</th>
+        <th>Véhicules</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var entreprise in Model)
+    {
+        <tr>
+            <td>@entreprise.Nom</td>
+            <td>@(entreprise.ContratActif ? "Oui" : "Non")</td>
+            <td>
+                <ul>
+                    @foreach (var vehicule in entreprise.Vehicules)
+                    {
+                        <li>
+                            @vehicule.Nom (@vehicule.Marque @vehicule.Modele, Immatriculation: @vehicule.Immatriculation)
+                            - Statut: @vehicule.Statut
+                            @if (!string.IsNullOrEmpty(vehicule.SalarierPrenom) && !string.IsNullOrEmpty(vehicule.SalarierNom))
+                            {
+                                <span> - Attribué à: @vehicule.SalarierPrenom @vehicule.SalarierNom</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</body>
+</html>
