@@ -10,3 +10,4 @@
 /home/cosmo/Development/NET/Rattrapage/Cars.Model/obj/Debug/net8.0/refint/Cars.Model.dll
 /home/cosmo/Development/NET/Rattrapage/Cars.Model/obj/Debug/net8.0/Cars.Model.pdb
 /home/cosmo/Development/NET/Rattrapage/Cars.Model/obj/Debug/net8.0/ref/Cars.Model.dll
+/home/cosmo/Development/NET/Rattrapage/Cars.Model/obj/Debug/net8.0/Cars.Model.csproj.AssemblyReference.cache

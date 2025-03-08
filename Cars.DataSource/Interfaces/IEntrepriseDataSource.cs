@@ -8,4 +8,6 @@ public interface IEntrepriseDataSource
     List<EntreprisesModel> ListerEntreprises();
     void CreateEntreprise(EntreprisesModel entreprise);
     
+    EntreprisesModel GetEntrepriseById(int entrepriseId);
+    
 }

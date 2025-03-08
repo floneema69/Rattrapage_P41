@@ -33,5 +33,12 @@ namespace Cars.DataSource
             _context.Entreprises.Add(entreprise);
             _context.SaveChanges();
         }
+        public EntreprisesModel GetEntrepriseById(int entrepriseId)
+        {
+            return _context.Entreprises
+                .Include(e => e.Vehicules)
+                .ThenInclude(v => v.Salarie)
+                .FirstOrDefault(e => e.Entrepriseid == entrepriseId);
+        }
     }
 }

@@ -19,6 +19,18 @@ namespace Cars.DataContext.Seed
                     Entrepriseid = 2,
                     Nom = "Entreprise B",
                     ContratActif = false
+                },
+                new EntreprisesModel
+                {
+                    Entrepriseid = 3,
+                    Nom = "Entreprise C",
+                    ContratActif = true
+                },
+            new EntreprisesModel
+                {
+                    Entrepriseid = 4,
+                    Nom = "Entreprise D",
+                    ContratActif = true
                 }
             );
         }

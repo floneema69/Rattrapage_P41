@@ -1,0 +1,21 @@
+@model Cars.WebUI.ViewModel.Identity.RegisterViewModel
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EntrepriseId">Entreprise</label>
+        <select asp-for="EntrepriseId" class="form-control" asp-items="Model.Entreprises">
+            <option value="">Select an enterprise (optional)</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

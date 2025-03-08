@@ -1,0 +1,52 @@
+@model Cars.WebUI.ViewModel.EntrepriseViewModels.EnterpriseDetailsViewModel
+
+<h2>Enterprise Details</h2>
+<div>
+    <p>Name: @Model.Entreprise.Nom</p>
+    <p>Address: @Model.Entreprise.ContratActif</p>
+</div>
+
+<div>
+    <h3>Employees</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Vehicle</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var salarier in Model.Salaries)
+        {
+            <tr>
+                <td>@salarier.Nom</td>
+                <td>@salarier.Email</td>
+                <td>@salarier.Vehicule?.Nom </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h3>Vehicles</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var vehicule in Model.Vehicules)
+        {
+            <tr>
+                <td>@vehicule.Nom</td>
+                <td>@vehicule.statut</td>
+
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

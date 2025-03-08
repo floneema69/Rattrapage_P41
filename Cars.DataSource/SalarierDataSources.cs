@@ -33,5 +33,16 @@ namespace Cars.DataSource
         {
             return _context.Salaries.FirstOrDefault(s => s.Vehiculeid == vehiculeId);
         }
+        public SalariesModel GetSalarierById(int salarierId)
+        {
+            return _context.Salaries
+                .FirstOrDefault(s => s.Salarieid == salarierId);
+        }
+        public IEnumerable<SalariesModel> GetSalariesByEntrepriseId(int entrepriseId)
+        {
+            return _context.Salaries
+                .Where(s => s.Entrepriseid == entrepriseId)
+                .ToList();
+        }
     }
 }

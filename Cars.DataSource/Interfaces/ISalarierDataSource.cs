@@ -8,5 +8,8 @@ namespace Cars.DataSource.Interfaces
         List<SalariesModel> GetSalariesWithNoVehicule(int entrepriseId);
         SalariesModel GetSalarieByVehiculeId(int vehiculeId);
 
+        SalariesModel GetSalarierById(int salarierId);
+        
+        IEnumerable<SalariesModel> GetSalariesByEntrepriseId(int entrepriseId);
     }
 }

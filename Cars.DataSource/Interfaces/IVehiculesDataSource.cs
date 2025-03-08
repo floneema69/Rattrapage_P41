@@ -7,5 +7,7 @@ public interface IVehiculesDataSource
     void CreateVehicule(VehiculesModel vehicule);
     void UpdateVehiculeStatus(int vehiculeId, bool statut);
     VehiculesModel GetVehiculeById(int vehiculeId);
+    IEnumerable<VehiculesModel> GetVehiculesByEntrepriseId(int entrepriseId); 
+
 
 }

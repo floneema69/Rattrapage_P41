@@ -30,4 +30,10 @@ public class VehiculesDataSources : IVehiculesDataSource
     {
         return _context.Vehicules.Find(vehiculeId);
     }
+    public IEnumerable<VehiculesModel> GetVehiculesByEntrepriseId(int entrepriseId)
+    {
+        return _context.Vehicules
+            .Where(v => v.EntrepriseID == entrepriseId)
+            .ToList();
+    }
 }
