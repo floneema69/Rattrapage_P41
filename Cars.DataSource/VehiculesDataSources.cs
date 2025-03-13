@@ -17,12 +17,13 @@ public class VehiculesDataSources : IVehiculesDataSource
         _context.Vehicules.Add(vehicule);
         _context.SaveChanges();
     }
-    public void UpdateVehiculeStatus(int vehiculeId, bool statut)
+    public void UpdateVehiculeStatus(int vehiculeId, bool statut, string description)
     {
         var vehicule = _context.Vehicules.Find(vehiculeId);
         if (vehicule != null)
         {
             vehicule.statut = statut;
+            vehicule.description = description;
             _context.SaveChanges();
         }
     }

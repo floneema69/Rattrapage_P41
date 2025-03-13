@@ -40,5 +40,15 @@ namespace Cars.DataSource
                 .ThenInclude(v => v.Salarie)
                 .FirstOrDefault(e => e.Entrepriseid == entrepriseId);
         }
+        public void UpdateEntreprise(EntreprisesModel entreprise)
+        {
+            var existingEntreprise = _context.Entreprises.Find(entreprise.Entrepriseid);
+            if (existingEntreprise != null)
+            {
+                existingEntreprise.Nom = entreprise.Nom;
+                existingEntreprise.ContratActif = entreprise.ContratActif;
+                _context.SaveChanges();
+            }
+        }
     }
 }

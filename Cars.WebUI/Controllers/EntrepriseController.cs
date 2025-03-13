@@ -37,6 +37,7 @@ namespace Cars.WebUI.Controllers
                     Modele = v.Modele,
                     Immatriculation = v.Immatriculation,
                     Statut = v.statut,
+                    Description = v.description,
                     SalarierPrenom = v.Salarie?.Prenom,
                     SalarierNom = v.Salarie?.Nom
                 }).ToList()
@@ -67,6 +68,47 @@ namespace Cars.WebUI.Controllers
 
             _entrepriseDataSource.CreateEntreprise(entreprise);
             return RedirectToAction("Index");
+        }
+        [HttpGet]
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var entreprise = _entrepriseDataSource.GetEntrepriseById(id);
+            if (entreprise == null)
+            {
+                return NotFound();
+            }
+
+            var model = new EditEntrepriseViewModel
+            {
+                EntrepriseId = entreprise.Entrepriseid,
+                Nom = entreprise.Nom,
+                ContratActif = entreprise.ContratActif
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditEntrepriseViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var entreprise = _entrepriseDataSource.GetEntrepriseById(model.EntrepriseId);
+                if (entreprise == null)
+                {
+                    return NotFound();
+                }
+
+                entreprise.Nom = model.Nom;
+                entreprise.ContratActif = model.ContratActif;
+
+                _entrepriseDataSource.UpdateEntreprise(entreprise);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
 
     }

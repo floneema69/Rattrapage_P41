@@ -22,6 +22,10 @@
         <label asp-for="Vehicule.Statut"></label>
         <input asp-for="Vehicule.Statut" type="checkbox" class="form-check-input" />
     </div>
+    <div class="form-group">
+        <label asp-for="Vehicule.Description"></label>
+        <textarea asp-for="Vehicule.Description" class="form-control"></textarea>
+    </div>
     <input type="hidden" asp-for="Vehicule.EntrepriseID" />
     <button type="submit" class="btn btn-primary">Create</button>
     <partial name="_ValidationScriptsPartial"/>

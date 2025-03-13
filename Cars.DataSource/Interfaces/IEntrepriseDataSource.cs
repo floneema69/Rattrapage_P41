@@ -10,4 +10,6 @@ public interface IEntrepriseDataSource
     
     EntreprisesModel GetEntrepriseById(int entrepriseId);
     
+    void  UpdateEntreprise(EntreprisesModel entreprise);
+    
 }

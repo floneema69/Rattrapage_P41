@@ -43,7 +43,8 @@ namespace Cars.WebUI.Controllers
                     Marque = viewModel.Vehicule.Marque,
                     Modele = viewModel.Vehicule.Modele,
                     Immatriculation = viewModel.Vehicule.Immatriculation,
-                    statut = viewModel.Vehicule.Statut
+                    statut = viewModel.Vehicule.Statut,
+                    description = viewModel.Vehicule.Description
                 };
 
                 _vehiculeDataSource.CreateVehicule(vehicule);
@@ -85,7 +86,7 @@ namespace Cars.WebUI.Controllers
                     }
                 }
 
-                _vehiculeDataSource.UpdateVehiculeStatus(model.VehiculeId, model.Status);
+                _vehiculeDataSource.UpdateVehiculeStatus(model.VehiculeId, model.Status,model.Description);
                 return RedirectToAction("Index", "Entreprise");
             }
 

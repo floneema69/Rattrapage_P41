@@ -11,6 +11,8 @@ namespace Cars.WebUI.ViewModel.VehiculesViewModels
         public bool Statut { get; set; }
         public string? SalarierPrenom { get; set; }
         public string? SalarierNom { get; set; }
+        
+        public string? Description { get; set; }
         public string SalarieNomComplet => $"{SalarierPrenom} {SalarierNom}".Trim();
     }
 

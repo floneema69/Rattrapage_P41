@@ -10,6 +10,8 @@ public class VehiculesModel
     public string Immatriculation { get; set; }
     public bool statut { get; set; }
     
+    public string? description { get; set; }
+    
     public EntreprisesModel? Entreprise { get; set; }
     
     public SalariesModel? Salarie { get; set; }

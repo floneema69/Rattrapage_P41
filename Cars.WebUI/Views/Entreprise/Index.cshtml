@@ -29,12 +29,15 @@
                                 {
                                     @vehicule.SalarieNomComplet
                                 }
-                                else
+                                @if (!string.IsNullOrEmpty(vehicule.Description))
                                 {
-                                    @if (vehicule.Statut)
-                                    {
-                                        <a asp-controller="Salarie" asp-action="Assign" asp-route-idEntreprise="@entreprise.EntrepriseId" asp-route-idVehicule="@vehicule.VehiculeId" class="btn btn-primary">Associer un salarié</a>
-                                    }                                }
+                                    <br />
+                                    <small>@vehicule.Description</small>
+                                }
+                                @if (vehicule.Statut)
+                                {
+                                    <a asp-controller="Salarie" asp-action="Assign" asp-route-idEntreprise="@entreprise.EntrepriseId" asp-route-idVehicule="@vehicule.VehiculeId" class="btn btn-primary">Associer un salarié</a>
+                                }
                                 <a asp-controller="Vehicule" asp-action="UpdateStatus" asp-route-id="@vehicule.VehiculeId" class="btn btn-secondary">Modifier le statut</a>
                             </li>
                         }
@@ -47,6 +50,7 @@
             </td>
             <td>
                 <a asp-controller="Vehicule" asp-action="Create" asp-route-idEntreprise="@entreprise.EntrepriseId" class="btn btn-primary">Ajouter un véhicule</a>
+                <a asp-controller="Entreprise" asp-action="Edit" asp-route-id="@entreprise.EntrepriseId" class="btn btn-warning">Modifier</a>
             </td>
         </tr>
     }
