@@ -13,7 +13,7 @@ namespace Cars.DataContext.EntityTypeConfiguration
             builder.HasOne(s => s.Entreprise)
                 .WithMany(e => e.Salaries)
                 .HasForeignKey(s => s.Entrepriseid)
-                .OnDelete(DeleteBehavior.NoAction); 
+                .OnDelete(DeleteBehavior.Cascade); 
 
             builder.HasOne(s => s.Vehicule)
                 .WithOne(v => v.Salarie)

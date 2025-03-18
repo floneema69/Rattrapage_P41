@@ -39,6 +39,10 @@
                                     <a asp-controller="Salarie" asp-action="Assign" asp-route-idEntreprise="@entreprise.EntrepriseId" asp-route-idVehicule="@vehicule.VehiculeId" class="btn btn-primary">Associer un salarié</a>
                                 }
                                 <a asp-controller="Vehicule" asp-action="UpdateStatus" asp-route-id="@vehicule.VehiculeId" class="btn btn-secondary">Modifier le statut</a>
+                                <a asp-controller="Vehicule" asp-action="Edit" asp-route-id="@vehicule.VehiculeId" class="btn btn-secondary">Modifier le vehicule</a>
+                                <form asp-action="Delete" asp-controller="Vehicule" asp-route-id="@vehicule.VehiculeId" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-danger">Supprimer Vehicule</button>
+                                </form>
                             </li>
                         }
                     </ul>
@@ -51,6 +55,9 @@
             <td>
                 <a asp-controller="Vehicule" asp-action="Create" asp-route-idEntreprise="@entreprise.EntrepriseId" class="btn btn-primary">Ajouter un véhicule</a>
                 <a asp-controller="Entreprise" asp-action="Edit" asp-route-id="@entreprise.EntrepriseId" class="btn btn-warning">Modifier</a>
+                <form asp-action="Delete" asp-controller="Entreprise" asp-route-id="@entreprise.EntrepriseId" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
             </td>
         </tr>
     }

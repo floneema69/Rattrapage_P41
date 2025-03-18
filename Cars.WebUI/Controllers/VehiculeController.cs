@@ -92,5 +92,69 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var vehicule = _vehiculeDataSource.GetVehiculeById(id);
+            if (vehicule == null)
+            {
+                return NotFound();
+            }
+
+            var salarie = _salarierDataSource.GetSalarieByVehiculeId(id);
+            if (salarie != null)
+            {
+                _salarierDataSource.UpdateSalarierWithVehicule(salarie.Salarieid, null);
+            }
+
+            _vehiculeDataSource.DeleteVehicule(id);
+
+            return RedirectToAction("Index", "Entreprise");
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var vehicule = _vehiculeDataSource.GetVehiculeById(id);
+            if (vehicule == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new EditVehiculeViewModel
+            {
+                VehiculeId = vehicule.Vehiculeid,
+                Nom = vehicule.Nom,
+                Marque = vehicule.Marque,
+                Modele = vehicule.Modele,
+                Immatriculation = vehicule.Immatriculation,
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(EditVehiculeViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                var vehicule = _vehiculeDataSource.GetVehiculeById(viewModel.VehiculeId);
+                if (vehicule == null)
+                {
+                    return NotFound();
+                }
+
+                vehicule.Nom = viewModel.Nom;
+                vehicule.Marque = viewModel.Marque;
+                vehicule.Modele = viewModel.Modele;
+                vehicule.Immatriculation = viewModel.Immatriculation;
+
+                _vehiculeDataSource.UpdateVehicule(vehicule);
+
+                return RedirectToAction("Index", "Entreprise");
+            }
+
+            return View(viewModel);
+        }
     }
 }

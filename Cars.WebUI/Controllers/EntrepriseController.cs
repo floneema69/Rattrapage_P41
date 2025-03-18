@@ -110,6 +110,19 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var entreprise = _entrepriseDataSource.GetEntrepriseById(id);
+            if (entreprise == null)
+            {
+                return NotFound();
+            }
+
+            _entrepriseDataSource.DeleteEntreprise(id);
+
+            return RedirectToAction("Index");
+        }
 
     }
 }

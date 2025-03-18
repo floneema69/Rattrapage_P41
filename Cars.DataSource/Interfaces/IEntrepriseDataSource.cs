@@ -12,4 +12,5 @@ public interface IEntrepriseDataSource
     
     void  UpdateEntreprise(EntreprisesModel entreprise);
     
+    void DeleteEntreprise(int entrepriseId);
 }

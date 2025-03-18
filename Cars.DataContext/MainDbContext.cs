@@ -28,7 +28,8 @@ namespace Cars.DataContext;
              modelBuilder.Entity<User>()
                         .HasOne(u => u.Entreprise)
                         .WithMany(e => e.Users)
-                        .HasForeignKey(u => u.EntrepriseId);
+                        .HasForeignKey(u => u.EntrepriseId)
+                        .OnDelete(DeleteBehavior.SetNull);
             EntreprisesSeed.Seed(modelBuilder);
             VehicleSeed.Seed(modelBuilder);
             SalariesSeed.Seed(modelBuilder);

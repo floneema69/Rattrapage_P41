@@ -50,5 +50,14 @@ namespace Cars.DataSource
                 _context.SaveChanges();
             }
         }
+        public void DeleteEntreprise(int entrepriseId)
+        {
+            var entreprise = _context.Entreprises.Find(entrepriseId);
+            if (entreprise != null)
+            {
+                _context.Entreprises.Remove(entreprise);
+                _context.SaveChanges();
+            }
+        }
     }
 }

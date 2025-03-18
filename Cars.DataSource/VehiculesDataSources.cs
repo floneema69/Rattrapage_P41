@@ -37,4 +37,18 @@ public class VehiculesDataSources : IVehiculesDataSource
             .Where(v => v.EntrepriseID == entrepriseId)
             .ToList();
     }
+    public void DeleteVehicule(int vehiculeId)
+    {
+        var vehicule = _context.Vehicules.Find(vehiculeId);
+        if (vehicule != null)
+        {
+            _context.Vehicules.Remove(vehicule);
+            _context.SaveChanges();
+        }
+    }
+    public void UpdateVehicule(VehiculesModel vehicule)
+    {
+        _context.Vehicules.Update(vehicule);
+        _context.SaveChanges();
+    }
 }
