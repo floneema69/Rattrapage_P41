@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/cosmo/Development/NET/Rattrapage/Cars.WebUI/Views/Entreprise/allentreprise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9hbGxlbnRyZXByaXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/cosmo/Development/NET/Rattrapage/Cars.WebUI/Views/Entreprise/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW50cmVwcmlzZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

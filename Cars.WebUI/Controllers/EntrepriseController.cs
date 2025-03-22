@@ -46,6 +46,32 @@ namespace Cars.WebUI.Controllers
             return View(entrepriseViewModels);
         }
         [HttpGet]
+        public IActionResult Allentreprise()
+        {
+            var entreprises = _entrepriseDataSource.ListerEntreprises();
+            var entrepriseViewModels = entreprises.Select(e => new EntrepriseViewModel
+            {
+                EntrepriseId = e.Entrepriseid,
+                Nom = e.Nom,
+                ContratActif = e.ContratActif,
+                Vehicules = e.Vehicules?.Select(v => new VehiculesViewModel
+                {
+                    VehiculeId = v.Vehiculeid,
+                    EntrepriseID = v.EntrepriseID,
+                    Nom = v.Nom,
+                    Marque = v.Marque,
+                    Modele = v.Modele,
+                    Immatriculation = v.Immatriculation,
+                    Statut = v.statut,
+                    Description = v.description,
+                    SalarierPrenom = v.Salarie?.Prenom,
+                    SalarierNom = v.Salarie?.Nom
+                }).ToList()
+            }).ToList();
+
+            return View(entrepriseViewModels);
+        }
+        [HttpGet]
         public IActionResult Create()
         {
             return View(new CreateEntrepriseViewModel());
@@ -69,7 +95,6 @@ namespace Cars.WebUI.Controllers
             _entrepriseDataSource.CreateEntreprise(entreprise);
             return RedirectToAction("Index");
         }
-        [HttpGet]
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -123,6 +148,7 @@ namespace Cars.WebUI.Controllers
 
             return RedirectToAction("Index");
         }
+        
 
     }
 }

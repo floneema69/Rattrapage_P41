@@ -22,10 +22,13 @@
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Index">Voir les entreprises</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Index">Voir les entreprises actif</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Create">Les véhicules</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Allentreprise">Voir toute les entreprises</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Entreprise" asp-action="Create">Cree une entreprise</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Statistique" asp-action="Index">Les Statistiques</a>

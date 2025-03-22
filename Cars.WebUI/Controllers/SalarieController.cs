@@ -51,5 +51,16 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
+        
+        [HttpPost]
+        public IActionResult Disassociate(int idVehicule)
+        {
+            var salarier = _salarierDataSource.GetSalarieByVehiculeId(idVehicule);
+            if (salarier != null)
+            {
+                _salarierDataSource.UpdateSalarierWithVehicule(salarier.Salarieid, null);
+            }
+            return RedirectToAction("Index", "Entreprise");
+        }
     }
 }
