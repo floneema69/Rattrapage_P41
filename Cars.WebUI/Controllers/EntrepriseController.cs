@@ -7,6 +7,7 @@ using Cars.Model;
 using Cars.WebUI.ViewModel;
 using Cars.WebUI.ViewModel.EntrepriseViewModels;
 using Cars.WebUI.ViewModel.VehiculesViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace Cars.WebUI.Controllers
@@ -19,6 +20,8 @@ namespace Cars.WebUI.Controllers
         {
             _entrepriseDataSource = entrepriseDataSource;
         }
+
+        [Authorize(Roles = "Admin")]
 
         public IActionResult Index()
         {
@@ -45,6 +48,8 @@ namespace Cars.WebUI.Controllers
 
             return View(entrepriseViewModels);
         }
+        [Authorize(Roles = "Admin")]
+
         [HttpGet]
         public IActionResult Allentreprise()
         {
@@ -71,11 +76,14 @@ namespace Cars.WebUI.Controllers
 
             return View(entrepriseViewModels);
         }
+        [Authorize(Roles = "Admin")]
+
         [HttpGet]
         public IActionResult Create()
         {
             return View(new CreateEntrepriseViewModel());
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult Create(CreateEntrepriseViewModel viewModel)
@@ -95,6 +103,8 @@ namespace Cars.WebUI.Controllers
             _entrepriseDataSource.CreateEntreprise(entreprise);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
+
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -113,6 +123,7 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpPost]
         public IActionResult Edit(EditEntrepriseViewModel model)
@@ -135,6 +146,8 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
+        [Authorize(Roles = "Admin")]
+
         [HttpPost]
         public IActionResult Delete(int id)
         {

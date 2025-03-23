@@ -1,5 +1,6 @@
 using Cars.DataSource.Interfaces;
 using Cars.WebUI.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -15,6 +16,7 @@ namespace Cars.WebUI.Controllers
             _salarierDataSource = salarierDataSource;
             _vehiculesDataSource = vehiculeDataSource;
         }
+        [Authorize(Roles = "Admin")]
 
         [HttpGet]
         public IActionResult Assign(int idEntreprise, int idVehicule)
@@ -41,6 +43,8 @@ namespace Cars.WebUI.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = "Admin")]
+
         [HttpPost]
         public IActionResult Assign(AssignSalarieViewModel model)
         {
@@ -51,7 +55,8 @@ namespace Cars.WebUI.Controllers
 
             return View(model);
         }
-        
+        [Authorize(Roles = "Admin")]
+
         [HttpPost]
         public IActionResult Disassociate(int idVehicule)
         {

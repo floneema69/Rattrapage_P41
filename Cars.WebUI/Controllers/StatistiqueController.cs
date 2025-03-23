@@ -1,6 +1,7 @@
 using Cars.DataSource.Interfaces;
 using Cars.WebUI.ViewModel.EntrepriseViewModels;
 using Cars.WebUI.ViewModel.VehiculesViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cars.WebUI.Controllers;
@@ -13,6 +14,7 @@ public class StatistiqueController : Controller
     {
         _entrepriseDataSource = entrepriseDataSource;
     }
+    [Authorize(Roles = "Admin")]
 
     public IActionResult Index()
     {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Cars.DataSource.Interfaces;
 using Cars.WebUI.ViewModel;
 using Cars.WebUI.ViewModel.EntrepriseViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cars.WebUI.Controllers
 {
@@ -17,6 +18,7 @@ namespace Cars.WebUI.Controllers
             _salarierDataSource = salarierDataSource;
             _vehiculesDataSource = vehiculesDataSource;
         }
+        [Authorize(Roles = "Client")]
 
         public async Task<IActionResult> EnterpriseDetails()
         {
