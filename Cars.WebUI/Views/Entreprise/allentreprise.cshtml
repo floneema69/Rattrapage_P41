@@ -7,6 +7,7 @@
     <tr>
         <th>Nom</th>
         <th>Contrat Actif</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -15,7 +16,9 @@
         <tr>
             <td>@entreprise.Nom</td>
             <td>@entreprise.ContratActif</td>
+            <td>@entreprise.ContratActif <a asp-controller="Entreprise" asp-action="Edit" asp-route-id="@entreprise.EntrepriseId" class="btn btn-warning">Modifier</a></td>
         </tr>
+        
     }
     </tbody>
     <partial name="_ValidationScriptsPartial"/>
